@@ -6,20 +6,15 @@
 package Controller.Admin;
 
 import Model.Account;
-import Model.User;
 import View.ViewManager;
 import java.net.URL;
-import java.sql.Date;
 import java.sql.SQLException;
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 
 /**
@@ -49,6 +44,8 @@ public class CreateAccountController implements Initializable {
     private TextField balanceTF;
     @FXML
     private TextField currencyTF;
+    @FXML
+    private TextField dateTF;
 
     /**
      * Initializes the controller class.
@@ -76,17 +73,16 @@ public class CreateAccountController implements Initializable {
     @FXML
     private void saveNewAccount(ActionEvent event) throws SQLException, ClassNotFoundException {
         // get data from all text fields 
-        String user_id = userIDTF.getText();
+        int user_id = Integer.parseInt(userIDTF.getText());
         int account_number = Integer.parseInt(accountNumberTF.getText());
         String username = usernameTF.getText();
         String currency = currencyTF.getText();
         double balance = Integer.parseInt(balanceTF.getText());
-        LocalDate currentDate = LocalDate.now();
-        Date date = (Date) Date.from(currentDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+        String creationDate = dateTF.getText();
         
         
-        // make an user object having this data
-        Account account = new Account(user_id, account_number, username, currency, balance, date);
+        // make an account object having this data
+        Account account = new Account(user_id, account_number, username, currency, balance);
         // save the user in database by save method
         account.save();
         

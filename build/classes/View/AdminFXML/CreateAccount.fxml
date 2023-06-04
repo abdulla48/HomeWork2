@@ -100,6 +100,12 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
+            <Label layoutX="414.0" layoutY="211.0" prefHeight="42.0" prefWidth="127.0" text="date" textFill="#383560">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="dateTF" layoutX="541.0" layoutY="220.0" styleClass="textField" stylesheets="@../../css/admin.css" />
          </children>
       </AnchorPane>
       <Label layoutX="233.0" layoutY="13.0" prefHeight="42.0" prefWidth="286.0" text="Users Managment / Create User" textFill="#838383">

@@ -5,11 +5,9 @@
  */
 package Model;
 
-import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
-import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
-import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
+
 import java.sql.Connection;
-import java.sql.Date;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -22,20 +20,20 @@ import java.util.ArrayList;
 public class Account {
     private int id;
     
-    private String user_id;
+    private int user_id;
     private int account_number ;
     private String username;
     private String currency;
     private double balance;
-    private Date creation_date;
+    private String creation_datee;
 
-    public Account(String user_id, int account_number, String username, String currency, double balance, Date creation_date) {
+    public Account(int user_id, int account_number, String username, String currency, double balance ) {
         this.user_id = user_id;
         this.account_number = account_number;
         this.username = username;
         this.currency = currency;
         this.balance = balance;
-        this.creation_date = creation_date;
+        
     }
 
     public int getId() {
@@ -46,11 +44,11 @@ public class Account {
         this.id = id;
     }
 
-    public String getUser_id() {
+    public int getUser_id() {
         return user_id;
     }
 
-    public void setUser_id(String user_id) {
+    public void setUser_id(int user_id) {
         this.user_id = user_id;
     }
 
@@ -86,13 +84,14 @@ public class Account {
         this.balance = balance;
     }
 
-    public Date getCreation_date() {
-        return creation_date;
+    public String getCreation_date() {
+        return creation_datee;
     }
 
-    public void setCreation_date(Date creation_date) {
-        this.creation_date = creation_date;
+    public void setCreation_date(String creation_date) {
+        this.creation_datee = creation_date;
     }
+    
 
     
     
@@ -105,12 +104,12 @@ public class Account {
         String sql = "INSERT INTO ACCOUNTS (ID,user_id,account_number ,username,currency,balance,creation_date) VALUES (?, ?, ?, ?,?,?,?)";
         ps = c.prepareStatement(sql);
         ps.setInt(1, this.getId());
-        ps.setString(2,this.getUser_id());
+        ps.setInt(2,this.getUser_id());
         ps.setInt(3, this.getAccount_number());
         ps.setString(4, this.getUsername());
         ps.setString(5, this.getCurrency());
         ps.setDouble(6, this.getBalance());
-        ps.setDate(7, this.getCreation_date());
+        ps.setString(7, this.getCreation_date());
         recordCounter = ps.executeUpdate();
         if (recordCounter > 0) {
             System.out.println(this.getUsername()
@@ -132,8 +131,9 @@ public class Account {
         ps = c.prepareStatement(sql);
         rs = ps.executeQuery();
         while (rs.next()){
-            Account account = new Account(rs.getString(2),rs.getInt(3),rs.getString(4),rs.getString(5),rs.getInt(6),rs.getDate(7));
+            Account account = new Account(rs.getInt(2),rs.getInt(3),rs.getString(4),rs.getString(5),rs.getInt(6));
             account.setId(rs.getInt(1));
+            account.setCreation_date("Fat");
             accounts.add(account);
             
         }
@@ -144,10 +144,29 @@ public class Account {
         return accounts;
     }
      
-    //update an existing user in users table 
-//    public int update() throws SQLException, ClassNotFoundException{
-//         
-//    }
+    //update an existing account in users table 
+    public int update() throws SQLException, ClassNotFoundException{
+        Connection c = DB.getInstance().getConnection();
+        PreparedStatement ps = null;
+        int recordCounter =0;
+        String sql = "UPDATE `accounts` SET user_id =?, account_number =?, username =?, currency =?, balance =? WHERE id =?";
+        ps = c.prepareStatement(sql);
+        ps.setInt(1,this.getUser_id());
+        ps.setInt(2, this.getAccount_number());
+        ps.setString(3, this.getUsername());
+        ps.setString(4, this.getCurrency());
+        ps.setDouble(5, this.getBalance());
+        recordCounter = ps.executeUpdate();
+        ps.setInt(6, this.getId());
+        if (recordCounter > 0) {
+            System.out.println("Account with id : "+this.getId()+" was updated successfully!");
+        }
+        if (ps != null){
+            ps.close();
+        }
+        c.close();
+        return recordCounter;  
+    }
     
     //delete an user from users table 
     public int delete() throws SQLException, ClassNotFoundException{

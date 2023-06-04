@@ -22,9 +22,6 @@
                </font>
             </Label>
             <Button fx:id="usersManagmentPageBtn" alignment="BASELINE_LEFT" layoutY="186.0" mnemonicParsing="false" onAction="#showUsersManagmentPage" prefHeight="49.0" prefWidth="207.0" styleClass="sideParItem" stylesheets="@../../css/admin.css" text="Users">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
                <font>
                   <Font name="System Bold Italic" size="18.0" />
                </font>
@@ -33,9 +30,6 @@
                </padding>
             </Button>
             <Button fx:id="accountsPageBtn" alignment="BASELINE_LEFT" layoutY="235.0" mnemonicParsing="false" onAction="#showAccountsPage" prefHeight="49.0" prefWidth="207.0" styleClass="sideParItemActive" stylesheets="@../../css/admin.css" text="Accounts">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
                <font>
                   <Font name="System Bold Italic" size="18.0" />
                </font>
@@ -44,9 +38,6 @@
                </padding>
             </Button>
             <Button fx:id="operationsPageBtn" alignment="BASELINE_LEFT" layoutY="284.0" mnemonicParsing="false" onAction="#showOperationsPage" prefHeight="49.0" prefWidth="207.0" styleClass="sideParItem" stylesheets="@../../css/admin.css" text="Operations">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
                <font>
                   <Font name="System Bold Italic" size="18.0" />
                </font>
@@ -62,17 +53,11 @@
       <AnchorPane layoutX="228.0" layoutY="64.0" prefHeight="506.0" prefWidth="779.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
          <children>
             <Button fx:id="createNewAccountrBtn" layoutX="14.0" layoutY="23.0" mnemonicParsing="false" onAction="#showAccountCreationPage" prefHeight="42.0" prefWidth="169.0" styleClass="createBtn" stylesheets="@../../css/admin.css" text="+ Create new account">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
             <Button fx:id="showAllAccountsBtn" layoutX="14.0" layoutY="105.0" mnemonicParsing="false" onAction="#showAllAccounts" prefHeight="42.0" prefWidth="156.0" styleClass="showAllBtn" stylesheets="@../../css/admin.css" text="Show All Accounts">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -88,17 +73,11 @@
                </columns>
             </TableView>
             <Button fx:id="updateSelectedAccountBtn" layoutX="14.0" layoutY="410.0" mnemonicParsing="false" onAction="#updateSelectedAccount" prefHeight="42.0" prefWidth="118.0" styleClass="updateBtn" stylesheets="@../../css/admin.css" text="Update">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
             <Button fx:id="deleteSelectedAccountBtn" layoutX="141.0" layoutY="410.0" mnemonicParsing="false" onAction="#deleteSelectedAccount" prefHeight="42.0" prefWidth="118.0" styleClass="deleteBtn" stylesheets="@../../css/admin.css" text="Delete">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -107,9 +86,6 @@
                <children>
                   <TextField fx:id="accontSearchTF" prefHeight="36.0" prefWidth="187.0" promptText="Account number" styleClass="textField" stylesheets="@../../css/admin.css" />
                   <Button fx:id="searchAccountBtn" mnemonicParsing="false" onAction="#searchForAnAccount" prefHeight="36.0" prefWidth="67.0" styleClass="showAllBtn" stylesheets="@../../css/admin.css" text="Search">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>

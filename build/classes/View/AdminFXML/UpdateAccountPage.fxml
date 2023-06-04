@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="590.0" prefWidth="825.0" style="-fx-background-color: #d1d1cd;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Admin.UpdateAccountPageController">
+   <children>
+      <AnchorPane layoutX="24.0" layoutY="57.0" prefHeight="506.0" prefWidth="770.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
+         <children>
+            <Button fx:id="updateNewUserBtn" layoutX="75.0" layoutY="387.0" mnemonicParsing="false" onAction="#updateNewAccount" prefHeight="42.0" prefWidth="118.0" styleClass="saveButton" stylesheets="@../../css/admin.css" text="Update">
+               
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="cancelBtn" layoutX="210.0" layoutY="387.0" mnemonicParsing="false" onAction="#cancelAccountUpdating" prefHeight="42.0" prefWidth="118.0" styleClass="cancelButton" stylesheets="@../../css/admin.css" text="Cancel">
+               
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="42.0" layoutY="57.0" prefHeight="42.0" prefWidth="127.0" text="user_id" textFill="#383560">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="userIDTF" layoutX="169.0" layoutY="64.0" styleClass="textField" stylesheets="@../../css/admin.css" />
+            <TextField fx:id="accountNumberTF" layoutX="169.0" layoutY="143.0" styleClass="textField" stylesheets="@../../css/admin.css" />
+            <Label layoutX="18.0" layoutY="136.0" prefHeight="42.0" prefWidth="151.0" text="account_number " textFill="#383560">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="usernameTF" layoutX="169.0" layoutY="215.0" styleClass="textField" stylesheets="@../../css/admin.css" />
+            <Label layoutX="42.0" layoutY="208.0" prefHeight="42.0" prefWidth="127.0" text="username" textFill="#383560">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="414.0" layoutY="139.0" prefHeight="42.0" prefWidth="127.0" text="balance" textFill="#383560">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="balanceTF" layoutX="541.0" layoutY="146.0" styleClass="textField" stylesheets="@../../css/admin.css" />
+            <TextField fx:id="currencyTF" layoutX="541.0" layoutY="67.0" styleClass="textField" stylesheets="@../../css/admin.css" />
+            <Label layoutX="414.0" layoutY="60.0" prefHeight="42.0" prefWidth="127.0" text="currency" textFill="#383560">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="414.0" layoutY="211.0" prefHeight="42.0" prefWidth="127.0" text="date" textFill="#383560">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="dateTF" layoutX="541.0" layoutY="220.0" styleClass="textField" stylesheets="@../../css/admin.css" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="63.0" layoutY="14.0" prefHeight="42.0" prefWidth="365.0" text="Accounts Managment / Update Account" textFill="#838383">
+         <effect>
+            <Glow level="0.45" />
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
